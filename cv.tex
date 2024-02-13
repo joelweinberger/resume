@@ -1,0 +1,240 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ydnt, maxbibnames=10]{biblatex}
+%\usepackage[style=authortitle,sorting=ydnt, maxbibnames=10]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Joel H. W. Weinberger} \\[7.5pt]
+%\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
+\href{https://www.linkedin.com/in/joelweinberger/}{\raisebox{-0.05\height}\faLinkedin\ joelweinberger} \ $|$ \ 
+\href{https://www.joelweinberger.us}{\raisebox{-0.05\height}\faGlobe \ joelweinberger.com} \ $|$ \ 
+\href{mailto:jww@joelweinberger.us}{\raisebox{-0.05\height}\faEnvelope \ jww@joelweinberger.com} \ %$|$ \ 
+%\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+%\section{Summary}
+%This CV can also be automatically complied and published using GitHub Actions. For details, %\href{https://github.com/jitinnair1/autoCV}{click here}.
+\section{Summary}
+Security and software engineer and manager. Excels at building teams with high engineering output and execution. Looking for technical leadership positions in security engineering or backend engineering.
+
+%Experience
+\section{Professional Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Snap \it{Security Engineering Manager and Technical Lead}} & \hfill Jan 2017 - Feb 2024 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Security engineering manager at Snap leading supply chain security. Focused on securing Snap's dependencies through hardening the CI/CD tool chain, dependency management, and sandboxing of untrusted code. Previously managed and led Snap's secrets management program. Prior to that, was a security engineer and tech lead on the Application Security team.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Google \it{Software Engineer}} & \hfill Feb 2013 - Jan 2017 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Software engineer on the Chrome web browser security team. Focused on new features to enhance security
+for users. Built tools for both the client and server to utilize to help developers write more secure
+web applications, such as designing and implementing the Subresource Integrity (SRI) web feature and many parts of Content Security Policy.
+%\begin{minipage}[t]{\linewidth}
+    %\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        %\item[--] long long line of blah blah that will wrap when the table fills the column width
+        %\item[--] again, long long line of blah blah that will wrap when the table fills the column width %but this time even more long long line of blah blah. again, long long line of blah blah that will %wrap when the table fills the column width but this time even more long long line of blah blah
+    %\end{itemize}
+    %\end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Coverity \it{Security Research Internship}} & \hfill Jun 2012 - Aug 2012 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Research intern in the office of the CTO working on security technology research. Focused on next-generation analysis of
+Web applications. In particular, looked at ways to connect server static analysis with client analysis
+to try to find new sets of Web application vulnerabilities.
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Microsoft Research \it{Security and PL Research Internship}} & \hfill Jun 2011 - Aug 2011 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Intern in the Research in Software Engineering (RiSE) group, working with Juan Chen, Ben Livshits,
+and Nikhil Swamy. Focused on type checking of JavaScript using F*, an F]-like language with dependent and refinement typing. Worked on statically enforcing complex security policies on Web applications through the type system, focusing on browser extensions. Built a compiler from JavaScript
+to F* and worked on type checking on resulting code for correctness and security properties.
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Sun Microsystems \it{Software Engineer}} & \hfill Jul 2007 - Jul 2008 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Full-time software engineer in the Fishworks advanced development team on Sun Storage 7000 NAS
+products. Worked on iSCSI and FTP integration, clustering interface support, and appliance stack
+management. Worked on operating system, application, and AJAX Web development.
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{VMware \it{Software Engineer Internship}} & \hfill Jun 2006 - Aug 2006 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Intern in the VMware ESX Core Kernel group. Developed shared memory infrastructure and signal
+handling capabilities.
+}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+2008 - 2012 & Ph.D., Computer Science at \textbf{University of California, Berkeley} \hfill \normalsize Thesis: Analysis and Enforcement of Web Application Security Policies, advised by Dawn Song \\
+
+2003 - 2007 & Bachelor's and Master's Degrees at \textbf{Brown University} \\ 
+
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Refereed Publications}
+\begin{refsection}[refereed-citations.bib]
+\nocite{*}
+\printbibliography[heading=none]
+\end{refsection}
+
+\section{Technical Reports}
+\begin{refsection}[tr-citations.bib]
+\nocite{*}
+\printbibliography[heading=none]
+\end{refsection}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+%\section{Technical Skills}
+%\begin{tabularx}{\linewidth}{@{}l X@{}}
+%Programming Languages & \normalsize{Java, C/C++, Python, Go, JavaScript}
+%\end{tabularx}
+
+\section{Technical Skills}
+Product Security, Infrastructure Security, and Application Security.
+
+Core languages: C++, C, Java, Go. Proficient languages: JavaScript, Python.
+
+\section{Interests}
+Running, skiing (alpine and water), tap dance, rock climbing, road biking, history, video games, reading
+
+Serving as elected at-large representaitve in the South Robertson Neighborhoods Council (\href{https://www.soronc.org}{soronc.org}) within the Los Angeles Neighborhoods Council system.
+
+\end{document}
