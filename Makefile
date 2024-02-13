@@ -1,7 +1,13 @@
-cv.pdf: cv.tex
-	pdflatex cv.tex
-	biber cv
-	pdflatex cv.tex
-	pdflatex cv.tex
+texfile := cv
 
-all: cv.pdf
+$(texfile).pdf: $(texfile).tex
+	pdflatex $(texfile).tex
+	biber $(texfile)
+	pdflatex $(texfile).tex
+	pdflatex $(texfile).tex
+
+clean:
+	rm -rf *.aux *.bbl *.bcf *.blg *.log *.out *.pdf *.run.xml
+	
+
+all: $(texfile).pdf
