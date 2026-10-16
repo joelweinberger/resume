@@ -80,6 +80,8 @@
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
+\titleformat{\subsection}{\large\scshape\raggedright}{}{0em}{}
+\titlespacing{\subsection}{0pt}{6pt}{4pt}
 
 %for publications
 \usepackage[style=authoryear,sorting=ydnt, maxbibnames=10]{biblatex}
@@ -133,14 +135,14 @@
 %\section{Summary}
 %This CV can also be automatically complied and published using GitHub Actions. For details, %\href{https://github.com/jitinnair1/autoCV}{click here}.
 \section{Summary}
-Security and software engineer. Previously engineering manager. Security expert with experience building multiple teams from the ground up.
+Security and software engineering manager and technical lead. Security expert with a focus on build, deploy, supply chain, and application security.
 
 %Experience
 \section{Professional Experience}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Anthropic \it{Member of Technical Staff}} & \hfill October 2025 - Present \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Security engineer focusing on builds, deploys, and supply chain security.}  \\
+\textbf{Anthropic \it{Member of Technical Staff (Manager)}} & \hfill October 2025 - Present \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Security engineering manager focusing on builds, deploys, and supply chain security. Previously technical lead of the lead.}  \\
 \end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
@@ -169,38 +171,17 @@ web applications, such as designing and implementing the Subresource Integrity (
 \end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Coverity \it{Security Research Internship}} & \hfill Jun 2012 - Aug 2012 \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-Research intern in the office of the CTO working on security technology research. Focused on next-generation analysis of
-Web applications. In particular, looked at ways to connect server static analysis with client analysis
-to try to find new sets of Web application vulnerabilities.
-}
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Microsoft Research \it{Security and PL Research Internship}} & \hfill Jun 2011 - Aug 2011 \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-Intern in the Research in Software Engineering (RiSE) group, working with Juan Chen, Ben Livshits,
-and Nikhil Swamy. Focused on type checking of JavaScript using F*, an F]-like language with dependent and refinement typing. Worked on statically enforcing complex security policies on Web applications through the type system, focusing on browser extensions. Built a compiler from JavaScript
-to F* and worked on type checking on resulting code for correctness and security properties.
-}
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{Sun Microsystems \it{Software Engineer}} & \hfill Jul 2007 - Jul 2008 \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
-Full-time software engineer in the Fishworks advanced development team on Sun Storage 7000 NAS
-products. Worked on iSCSI and FTP integration, clustering interface support, and appliance stack
-management. Worked on operating system, application, and AJAX Web development.
+Software engineer on the Fishworks advanced development team building the Sun Storage 7000 NAS appliance, spanning the OS, appliance management stack, and web UI.
 }
 \end{tabularx}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{VMware \it{Software Engineer Internship}} & \hfill Jun 2006 - Aug 2006 \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-Intern in the VMware ESX Core Kernel group. Developed shared memory infrastructure and signal
-handling capabilities.
-}
+\subsection*{Internships}
+\begin{tabularx}{\linewidth}{ @{}X r@{} }
+Coverity, Office of the CTO --- \textit{Security Research Intern} & \hfill Summer 2012 \\
+Microsoft Research, RiSE group --- \textit{Security \& PL Research Intern} & \hfill Summer 2011 \\
+VMware, ESX Core Kernel --- \textit{Software Engineering Intern} & \hfill Summer 2006 \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
